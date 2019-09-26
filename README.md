@@ -75,6 +75,29 @@ Assuming here also your configuration is defined in your `package.json`, add the
 }
 ```
 
+## Loading the environment using annotation
+
+If you are running all your tests with JSDom as main environment, you can load the Browserstack environment for a specific file by adding a Jest annotation at the beginning of your file.
+
+Here is an example:
+
+my-visual-test.spec.js:
+
+```javascript
+/**
+ * @jest-environment browserstack
+ */
+import { until, By } from 'selenium-webdriver';
+
+describe('my visual test', () => {
+  it('test something', () => {
+    global.__driver__.get('https://mysuperurl.ltd')
+    // do something
+    // do test
+  });
+});
+```
+
 ## Credentials
 
 If you aren't willing to put your credentials in your `package.json` file, you can export in your environment `BROWSERSTACK_USER_NAME` and `BROWSERSTACK_ACCESS_KEY`. If you do so, `userName` and `accessKey` can be omitted.

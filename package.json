@@ -1,9 +1,14 @@
 {
   "name": "jest-environment-browserstack",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "an environment for using Browserstack with Jest",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "homepage": "https://github.com/taktakpeops/jest-environment-browserstack#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taktakpeops/jest-environment-browserstack.git"
+  },
   "scripts": {
     "build": "tsc",
     "lint": "eslint --ext .ts src/*",
