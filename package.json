@@ -1,0 +1,42 @@
+{
+  "name": "jest-environment-browserstack",
+  "version": "0.1.0",
+  "description": "an environment for using Browserstack with Jest",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --ext .ts src/*",
+    "lint:fix": "eslint --ext .ts src/* --fix",
+    "prettier": "prettier --write \"**/*.{md,ts}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jest",
+    "browserstack",
+    "e2e",
+    "visual-testing",
+    "test",
+    "integration-test"
+  ],
+  "author": "taktakpeops",
+  "license": "MIT",
+  "dependencies": {
+    "@jest/types": "~24.9.0",
+    "@types/selenium-webdriver": "~4.0.3",
+    "browserstack-local": "~1.4.2",
+    "jest-environment-node": "~24.9.0",
+    "selenium-webdriver": "~4.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "@types/jest": "~24.0.18",
+    "@types/node": "~12.7.7",
+    "@typescript-eslint/eslint-plugin": "~2.3.1",
+    "@typescript-eslint/parser": "~2.3.1",
+    "eslint": "~6.4.0",
+    "eslint-config-prettier": "~6.3.0",
+    "eslint-plugin-prettier": "~3.1.1",
+    "prettier": "~1.18.2",
+    "typescript": "~3.6.3"
+  }
+}
