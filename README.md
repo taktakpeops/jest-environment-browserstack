@@ -22,7 +22,7 @@ Assuming your configuration is defined in your `package.json`, add the following
 {
   "jest": {
     "preset": "ts-jest",
-    "testEnvironment": "jsdom",
+    "testEnvironment": "browserstack",
     "globals": {
       "browserstack": {
         "capabilities": {
@@ -51,7 +51,7 @@ Assuming here also your configuration is defined in your `package.json`, add the
 {
   "jest": {
     "preset": "ts-jest",
-    "testEnvironment": "jsdom",
+    "testEnvironment": "browserstack",
     "globals": {
       "browserstack": {
         "capabilities": {

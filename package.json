@@ -1,6 +1,6 @@
 {
   "name": "jest-environment-browserstack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "an environment for using Browserstack with Jest",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
