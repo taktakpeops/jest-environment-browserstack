@@ -102,6 +102,20 @@ describe('my visual test', () => {
 
 If you aren't willing to put your credentials in your `package.json` file, you can export in your environment `BROWSERSTACK_USER_NAME` and `BROWSERSTACK_ACCESS_KEY`. If you do so, `userName` and `accessKey` can be omitted.
 
+# Examples
+
+In the `examples` folder, you can find an example using `react-create-app`.
+
+To run the test, type the following commands in your terminal:
+
+```bash
+cd examples/with-bt-local
+yarn install
+yarn test
+```
+
+The `test` script will run a basic e2e tests, a visual tests making a snapshot of the web-app and the unit-tests.
+
 # Known limitations
 
 For now, only one browser can be defined.
