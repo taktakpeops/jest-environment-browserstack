@@ -1,5 +1,8 @@
 # jest-environment-browserstack
 
+[![Actions Status](https://github.com/taktakpeops/jest-environment-browserstack/workflows/Node%20CI/badge.svg)](https://github.com/taktakpeops/jest-environment-browserstack/actions) [![npm version](http://img.shields.io/npm/v/jest-environment-browserstack.svg?style=flat)](https://npmjs.org/package/jest-environment-browserstack "View this project on npm")
+
+
 Use Jest as test-runner for running your visual-tests and more using Browserstack.
 
 The current implementation supports only the W3C way for capabilities. More info: https://www.browserstack.com/automate/selenium-4
