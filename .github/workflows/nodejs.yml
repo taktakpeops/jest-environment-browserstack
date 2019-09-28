@@ -12,10 +12,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test (soon)
+    - name: npm install, build, and test
+      env:
+        BROWSERSTACK_USER_NAME: ${secrets.BROWSERSTACK_USER_NAME}
+        BROWSERSTACK_ACCESS_KEY: ${secrets.BROWSERSTACK_ACCESS_KEY}
       run: |
         npm install
         npm run lint
         npm run build
-      env:
-        CI: true
+        npm run test

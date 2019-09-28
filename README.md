@@ -91,7 +91,7 @@ import { until, By } from 'selenium-webdriver';
 
 describe('my visual test', () => {
   it('test something', () => {
-    global.__driver__.get('https://mysuperurl.ltd')
+    global.__driver__.get('https://mysuperurl.ltd');
     // do something
     // do test
   });

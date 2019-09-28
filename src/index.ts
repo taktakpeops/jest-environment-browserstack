@@ -5,7 +5,7 @@ import { Builder, WebDriver } from 'selenium-webdriver';
 import { randomBytes } from 'crypto';
 import { Script } from 'vm';
 
-import { BrowserstackCapabilities } from './config';
+import { BrowserstackCapabilities } from './types';
 
 export default class BrowserstackEnvironment extends NodeEnvironment {
   private readonly localIdentifier: string;
@@ -104,6 +104,10 @@ export default class BrowserstackEnvironment extends NodeEnvironment {
   }
 
   private closeBTTunnel(): Promise<void | Error> {
+    if (!this.global.__local__) {
+      return Promise.resolve();
+    }
+
     return new Promise((resolve, reject): void => {
       this.global.__local__.stop((err?: Error) => {
         if (err) {

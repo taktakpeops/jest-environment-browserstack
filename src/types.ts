@@ -1,4 +1,4 @@
-export interface BrowserstackW3COptions {
+export type BrowserstackW3COptions = {
   userName: string;
   accessKey: string;
   os?: string;
@@ -9,10 +9,10 @@ export interface BrowserstackW3COptions {
   sessionName?: string;
   localIdentifier?: string;
   networkLogs?: boolean;
-}
+};
 
-export interface BrowserstackCapabilities {
+export type BrowserstackCapabilities = {
   browserName: string;
   'bstack:options': BrowserstackW3COptions;
   browserVersion?: string;
-}
+};

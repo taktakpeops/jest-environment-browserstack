@@ -11,8 +11,7 @@
   "parserOptions": {
     "ecmaVersion":  2018,
     "sourceType": "module",
-    "tsconfigRootDir": ".",
-    "project": "./tsconfig.json"
+    "tsconfigRootDir": "."
   },
   "rules": {
     "@typescript-eslint/no-unused-vars": 2,
