@@ -16,7 +16,7 @@ describe('visual testing VisualTest', () => {
     });
 
     await driver.get('http://localhost:8080');
-  }, 10000);
+  }, 20000);
 
   afterAll(async () => {
     await driver.quit();

@@ -102,7 +102,7 @@ describe('my visual test', () => {
       },
     });
     driver.get('https://mysuperurl.ltd');
-  });
+  }, 20000); // this timeout is required because starting a session in Browserstack can take ages
 
   afterAll(async () => {
     // can be omitted
