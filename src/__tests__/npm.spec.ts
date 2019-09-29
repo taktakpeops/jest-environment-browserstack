@@ -12,7 +12,7 @@ describe('NPM', () => {
       },
     });
     await driver.get('https://www.npmjs.com/package/jest-environment-browserstack');
-  }, 10000);
+  }, 20000);
 
   afterAll(async () => {
     await driver.quit();

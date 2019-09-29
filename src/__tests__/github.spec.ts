@@ -12,7 +12,7 @@ describe('Github', () => {
       },
     });
     await driver.get('https://github.com/taktakpeops/jest-environment-browserstack');
-  }, 10000);
+  }, 20000);
 
   afterAll(async () => {
     await driver.quit();
