@@ -4,12 +4,24 @@
 
 const { By } = require('selenium-webdriver');
 
-describe('ui testing', () => {
-  const driver = global.__driver__;
+describe('ui testing UiTest', () => {
+  let driver;
+
+  beforeAll(async () => {
+    driver = await global.__driver__({
+      'bstack:options': {
+        sessionName: 'ui testing',
+      },
+    });
+
+    await driver.get('http://localhost:8080');
+  }, 10000);
+
+  afterAll(async () => {
+    await driver.quit();
+  });
 
   it('load the app', async () => {
-    await driver.get('http://localhost:8080');
-
     const title = await driver.getTitle();
 
     expect(title).toBe('React App');

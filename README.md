@@ -1,7 +1,6 @@
 # jest-environment-browserstack
 
-[![Actions Status](https://github.com/taktakpeops/jest-environment-browserstack/workflows/Node%20CI/badge.svg)](https://github.com/taktakpeops/jest-environment-browserstack/actions) [![npm version](http://img.shields.io/npm/v/jest-environment-browserstack.svg?style=flat)](https://npmjs.org/package/jest-environment-browserstack "View this project on npm")
-
+[![Actions Status](https://github.com/taktakpeops/jest-environment-browserstack/workflows/Node%20CI/badge.svg)](https://github.com/taktakpeops/jest-environment-browserstack/actions) [![npm version](http://img.shields.io/npm/v/jest-environment-browserstack.svg?style=flat)](https://npmjs.org/package/jest-environment-browserstack 'View this project on npm')
 
 Use Jest as test-runner for running your visual-tests and more using Browserstack.
 
@@ -90,13 +89,30 @@ my-visual-test.spec.js:
 /**
  * @jest-environment browserstack
  */
-import { until, By } from 'selenium-webdriver';
+import { By } from 'selenium-webdriver';
 
 describe('my visual test', () => {
-  it('test something', () => {
-    global.__driver__.get('https://mysuperurl.ltd');
-    // do something
-    // do test
+  let driver;
+
+  beforeAll(async () => {
+    // you can override the default configuration
+    driver = await global.__driver__({
+      'bstack:options': {
+        sessionName: 'my test',
+      },
+    });
+    driver.get('https://mysuperurl.ltd');
+  });
+
+  afterAll(async () => {
+    // can be omitted
+    await driver.quit();
+  });
+
+  it('test something', async () => {
+    const myElement = await driver.findElement(By.css('.super.class'));
+    const text = await myElement.getText();
+    expect(text).toBe('super text');
   });
 });
 ```
@@ -121,7 +137,7 @@ The `test` script will run a basic e2e tests, a visual tests making a snapshot o
 
 # Known limitations
 
-For now, only one browser can be defined.
+For now, cannot override Browserstack parameters at runtime.
 
 # Bug and more
 

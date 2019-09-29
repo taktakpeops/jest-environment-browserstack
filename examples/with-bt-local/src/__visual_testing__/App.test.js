@@ -5,12 +5,24 @@ const { toMatchImageSnapshot } = require('jest-image-snapshot');
 
 expect.extend({ toMatchImageSnapshot });
 
-describe('ui testing', () => {
-  const driver = global.__driver__;
+describe('visual testing VisualTest', () => {
+  let driver;
 
-  it('load the app', async () => {
+  beforeAll(async () => {
+    driver = await global.__driver__({
+      'bstack:options': {
+        sessionName: 'visual testing',
+      },
+    });
+
     await driver.get('http://localhost:8080');
+  }, 10000);
 
+  afterAll(async () => {
+    await driver.quit();
+  });
+
+  it('check the app', async () => {
     const title = await driver.getTitle();
 
     expect(title).toBe('React App');

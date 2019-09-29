@@ -4,6 +4,7 @@ import { Options, Local } from 'browserstack-local';
 import { Builder, WebDriver } from 'selenium-webdriver';
 import { randomBytes } from 'crypto';
 import { Script } from 'vm';
+import merge from 'lodash.merge';
 
 import { BrowserstackCapabilities } from './types';
 
@@ -17,6 +18,8 @@ export default class BrowserstackEnvironment extends NodeEnvironment {
   private readonly btCapabilities: BrowserstackCapabilities;
 
   private btTunnelOpts: Options;
+
+  private readonly drivers: WebDriver[];
 
   constructor(config: Config.ProjectConfig) {
     super(config);
@@ -54,6 +57,7 @@ export default class BrowserstackEnvironment extends NodeEnvironment {
     }
 
     this.selHubUrl = seleniumHubUrl;
+    this.drivers = new Array<WebDriver>();
   }
 
   async setup(): Promise<void> {
@@ -63,13 +67,21 @@ export default class BrowserstackEnvironment extends NodeEnvironment {
       await this.createBTTunnel();
     }
 
-    this.global.__driver__ = await this.createWDDriver();
+    this.global.__driver__ = this.createWDDriver.bind(this);
   }
 
   async teardown(): Promise<void> {
     await super.teardown();
 
-    await this.global.__driver__.quit();
+    await Promise.all(
+      this.drivers.map(async driver => {
+        try {
+          await driver.quit();
+        } catch (_) {
+          return Promise.resolve();
+        }
+      }),
+    );
     await this.closeBTTunnel();
   }
 
@@ -77,10 +89,13 @@ export default class BrowserstackEnvironment extends NodeEnvironment {
     return super.runScript(script);
   }
 
-  private async createWDDriver(): Promise<WebDriver> {
-    const driverFactory = new Builder().usingServer(this.selHubUrl).withCapabilities(this.btCapabilities);
+  private async createWDDriver(capabilities?: BrowserstackCapabilities): Promise<WebDriver> {
+    const driverFactory = new Builder().usingServer(this.selHubUrl).withCapabilities(merge(this.btCapabilities, capabilities));
+    const driver = await driverFactory.build();
 
-    return await driverFactory.build();
+    this.drivers.push(driver);
+
+    return driver;
   }
 
   private createBTTunnel(): Promise<void | Error> {

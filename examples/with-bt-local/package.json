@@ -67,6 +67,9 @@
     "start": "PORT=8080 node scripts/start.js",
     "build": "node scripts/build.js",
     "test:jest": "jest --ci",
+    "test:visual": "jest --testNamePattern=VisualTest --update-snapshot",
+    "test:e2e": "jest --testNamePattern=UiTest",
+    "test:unit": "jest --testNamePattern=UnitTest",
     "test": "npm-run-all -p -r start test:jest"
   },
   "eslintConfig": {
