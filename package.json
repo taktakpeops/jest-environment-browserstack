@@ -31,13 +31,9 @@
   "license": "MIT",
   "dependencies": {
     "@jest/types": "~24.9.0",
-    "@types/lodash.merge": "~4.6.6",
-    "@types/node-fetch": "^2.5.2",
     "@types/selenium-webdriver": "~4.0.3",
     "browserstack-local": "~1.4.2",
     "jest-environment-node": "~24.9.0",
-    "lodash.merge": "~4.6.2",
-    "node-fetch": "^2.6.0",
     "selenium-webdriver": "~4.0.0-alpha.5"
   },
   "devDependencies": {

@@ -24,13 +24,13 @@ describe('Switch specs', () => {
   });
 
   it('has an author', async () => {
-    const authorSpan = await driver.findElement(By.css('.author'));
+    const authorSpan = await driver.findElement(By.css('.Details .Header-link:first-of-type'));
     const author = await authorSpan.getText();
     expect(author).toBe('taktakpeops');
   });
 
   it('has a repository name', async () => {
-    const repoSpan = await driver.findElement(By.css('h1.public strong'));
+    const repoSpan = await driver.findElement(By.css('.Details .Header-link:last-of-type'));
     const repo = await repoSpan.getText();
     expect(repo).toBe('jest-environment-browserstack');
   });
