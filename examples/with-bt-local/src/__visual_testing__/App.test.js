@@ -9,11 +9,7 @@ describe('visual testing VisualTest', () => {
   let driver;
 
   beforeAll(async () => {
-    driver = await global.__driver__({
-      'bstack:options': {
-        sessionName: 'visual testing',
-      },
-    });
+    driver = await global.__driver__();
 
     await driver.get('http://localhost:8080');
   }, 20000);

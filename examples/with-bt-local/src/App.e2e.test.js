@@ -8,11 +8,7 @@ describe('ui testing UiTest', () => {
   let driver;
 
   beforeAll(async () => {
-    driver = await global.__driver__({
-      'bstack:options': {
-        sessionName: 'ui testing',
-      },
-    });
+    driver = await global.__driver__();
 
     await driver.get('http://localhost:8080');
   }, 20000);
