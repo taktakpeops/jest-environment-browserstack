@@ -6,11 +6,7 @@ describe('NPM', () => {
   beforeAll(async () => {
     // eslint-disable-next-line
     // @ts-ignore
-    driver = await global.__driver__({
-      'bstack:options': {
-        sessionName: 'npm',
-      },
-    });
+    driver = await global.__driver__();
     await driver.get('https://www.npmjs.com/package/jest-environment-browserstack');
   }, 20000);
 

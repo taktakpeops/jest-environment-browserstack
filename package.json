@@ -17,7 +17,7 @@
     "lint": "eslint --ext .ts src/*",
     "lint:fix": "eslint --ext .ts src/* --fix",
     "prettier": "prettier --write \"**/*.{md,ts}\"",
-    "test": "npm run build && jest"
+    "test": "npm run build && jest --runInBand --ci"
   },
   "keywords": [
     "jest",
@@ -31,11 +31,9 @@
   "license": "MIT",
   "dependencies": {
     "@jest/types": "~24.9.0",
-    "@types/lodash.merge": "~4.6.6",
     "@types/selenium-webdriver": "~4.0.3",
     "browserstack-local": "~1.4.2",
     "jest-environment-node": "~24.9.0",
-    "lodash.merge": "~4.6.2",
     "selenium-webdriver": "~4.0.0-alpha.5"
   },
   "devDependencies": {
