@@ -1,12 +1,21 @@
 import { WebDriver, By } from 'selenium-webdriver';
 
-describe('Github', () => {
+describe('Switch specs', () => {
   let driver: WebDriver;
 
   beforeAll(async () => {
     // eslint-disable-next-line
     // @ts-ignore
-    driver = await global.__driver__();
+    driver = await global.__driver__({
+      'bstack:options': {
+        osVersion: '11',
+        deviceName: 'iPhone 8 Plus',
+        realMobile: 'true',
+        buildName: 'jest-environment-browserstack',
+        sessionName: 'override capabilities',
+      },
+      browserName: 'iPhone',
+    });
     await driver.get('https://github.com/taktakpeops/jest-environment-browserstack');
   }, 20000);
 

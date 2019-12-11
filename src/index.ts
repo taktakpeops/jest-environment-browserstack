@@ -4,7 +4,6 @@ import { Options, Local } from 'browserstack-local';
 import { Builder, WebDriver } from 'selenium-webdriver';
 import { randomBytes } from 'crypto';
 import { Script } from 'vm';
-import merge from 'lodash.merge';
 
 import { BrowserstackCapabilities } from './types';
 
@@ -53,6 +52,8 @@ export default class BrowserstackEnvironment extends NodeEnvironment {
         this.localIdentifier = opts.localIdentifier;
       }
 
+      this.btCapabilities['bstack:options'].localIdentifier = this.localIdentifier;
+
       this.btTunnelOpts = localTesting;
     }
 
@@ -90,7 +91,19 @@ export default class BrowserstackEnvironment extends NodeEnvironment {
   }
 
   private async createWDDriver(capabilities?: BrowserstackCapabilities): Promise<WebDriver> {
-    const driverFactory = new Builder().usingServer(this.selHubUrl).withCapabilities(merge(this.btCapabilities, capabilities));
+    // checks if we have new capabilities
+    if (capabilities) {
+      // define username + accessKey + tunnelIdentifier if any
+      capabilities['bstack:options'].userName = this.btCapabilities['bstack:options'].userName;
+      capabilities['bstack:options'].accessKey = this.btCapabilities['bstack:options'].accessKey;
+
+      if (this.localIdentifier) {
+        capabilities['bstack:options'].localIdentifier = this.btCapabilities['bstack:options'].localIdentifier;
+      }
+    }
+
+    const driverFactory = new Builder().usingServer(this.selHubUrl).withCapabilities(capabilities || this.btCapabilities);
+
     const driver = await driverFactory.build();
 
     this.drivers.push(driver);
