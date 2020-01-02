@@ -10,7 +10,7 @@ The current implementation supports only the W3C way for capabilities. More info
 
 For using this environment, run first the following command in your terminal:
 
-```
+```bash
 npm install --save-dev jest-environment-browserstack
 ```
 
