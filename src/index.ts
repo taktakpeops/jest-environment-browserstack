@@ -86,6 +86,7 @@ export default class BrowserstackEnvironment extends NodeEnvironment {
     await this.closeBTTunnel();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   runScript(script: Script): any {
     return super.runScript(script);
   }
