@@ -17,7 +17,7 @@ describe('Switch specs', () => {
       browserName: 'iPhone',
     });
     await driver.get('https://github.com/taktakpeops/jest-environment-browserstack');
-  }, 20000);
+  }, 40 * 1000);
 
   afterAll(async () => {
     await driver.quit();

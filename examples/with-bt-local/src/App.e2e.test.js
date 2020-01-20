@@ -11,7 +11,7 @@ describe('ui testing UiTest', () => {
     driver = await global.__driver__();
 
     await driver.get('http://localhost:8080');
-  }, 20000);
+  }, 20 * 1000);
 
   afterAll(async () => {
     await driver.quit();

@@ -8,7 +8,7 @@ describe('NPM', () => {
     // @ts-ignore
     driver = await global.__driver__();
     await driver.get('https://www.npmjs.com/package/jest-environment-browserstack');
-  }, 20000);
+  }, 40 * 1000);
 
   afterAll(async () => {
     await driver.quit();
