@@ -1,18 +1,13 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "esModuleInterop": true,
-        "target": "es6",
-        "allowJs": false,
-        "declaration": true,
-        "noImplicitAny": true,
-        "outDir": "./lib"
-    },
-    "include": [
-        "src/*.ts"
-    ],
-    "exclude": [
-        "node_modules/",
-        "*.spec.ts"
-    ]
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "allowJs": false,
+    "declaration": true,
+    "noImplicitAny": true,
+    "outDir": "./lib"
+  },
+  "include": ["src/*.ts"],
+  "exclude": ["node_modules/", "*.spec.ts"]
 }
