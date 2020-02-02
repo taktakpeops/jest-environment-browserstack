@@ -32,10 +32,10 @@ export default class BrowserstackEnvironment extends NodeEnvironment {
     const opts = this.btCapabilities['bstack:options'];
 
     if (!opts.accessKey || !opts.userName) {
-      const { BROWSERSTACK_USER_NAME: userName = '', BROWSERSTACK_ACCESS_KEY: accessKey = '' } = process.env;
+      const { BROWSERSTACK_USERNAME: userName = '', BROWSERSTACK_ACCESS_KEY: accessKey = '' } = process.env;
 
       if (!userName || !accessKey) {
-        throw new Error('valid credentials for Browserstack are requierd');
+        throw new Error('valid credentials for Browserstack are required');
       }
 
       this.btCapabilities['bstack:options'].accessKey = accessKey;
