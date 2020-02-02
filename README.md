@@ -119,7 +119,7 @@ describe('my visual test', () => {
 
 ### Credentials
 
-If you aren't willing to put your credentials in your `package.json` file, you can export in your environment `BROWSERSTACK_USER_NAME` and `BROWSERSTACK_ACCESS_KEY`. If you do so, `userName` and `accessKey` can be omitted.
+If you aren't willing to put your credentials in your `package.json` file, you can export in your environment `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY`. If you do so, `userName` and `accessKey` can be omitted.
 
 ## Examples
 
