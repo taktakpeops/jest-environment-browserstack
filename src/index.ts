@@ -14,11 +14,11 @@ export default class BrowserstackEnvironment extends NodeEnvironment {
 
   private readonly selHubUrl: string;
 
-  private readonly btCapabilities: BrowserstackCapabilities;
+  private btCapabilities: BrowserstackCapabilities;
 
   private btTunnelOpts: Options;
 
-  private readonly drivers: WebDriver[];
+  private drivers: WebDriver[];
 
   constructor(config: Config.ProjectConfig) {
     super(config);
