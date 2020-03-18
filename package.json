@@ -30,7 +30,7 @@
   "author": "taktakpeops",
   "license": "MIT",
   "dependencies": {
-    "@jest/types": "~24.9.0",
+    "@jest/types": "~25.1.0",
     "@types/selenium-webdriver": "~4.0.3",
     "browserstack-local": "~1.4.2",
     "jest-environment-node": "~25.1.0",
