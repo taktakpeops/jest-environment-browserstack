@@ -1,11 +1,10 @@
-name: Node CI
+name: branches
 on:
   pull_request:
     types: [ready_for_review, opened]
   push:
     branches-ignore:
       - master
-      - 'dependabot/*'
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -20,22 +19,31 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - uses: actions/cache@v1
       with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        path: ~/.yarn
+        key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-node-
-    - name: npm install
+    - name: install dependencies
       run: |
-        npm install
-    - name: npm lint
+        yarn
+    - name: linter
       run: |
-        npm run lint
-    - name: npm test
+        yarn lint
+    - name: test
       env:
         BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
         BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       run: |
-        npm run test
+        yarn build
+        cd packages/plugins
+        yarn link
+        cd ../selenium-webdriver
+        yarn link @jest-environment-browserstack/plugins
+        yarn link
+        cd ../core
+        yarn link @jest-environment-browserstack/plugins
+        yarn link @jest-environment-browserstack/selenium-webdriver
+        yarn test
 
   build:
     runs-on: ubuntu-latest
@@ -50,11 +58,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - uses: actions/cache@v1
       with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        path: ~/.yarn
+        key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-node-
-    - name: npm install and build
+    - name: install dependencies and build
       run: |
-        npm install
-        npm run build
+        yarn
+        yarn build

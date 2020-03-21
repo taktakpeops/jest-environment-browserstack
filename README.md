@@ -1,6 +1,6 @@
 # jest-environment-browserstack
 
-[![Actions Status](https://github.com/taktakpeops/jest-environment-browserstack/workflows/Node%20CI/badge.svg)](https://github.com/taktakpeops/jest-environment-browserstack/actions) [![npm version](http://img.shields.io/npm/v/jest-environment-browserstack.svg?style=flat)](https://npmjs.org/package/jest-environment-browserstack 'View this project on npm') [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7b1839cead7743a69be711dd6c1c022c)](https://www.codacy.com/manual/baudin.jean/jest-environment-browserstack?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=taktakpeops/jest-environment-browserstack&amp;utm_campaign=Badge_Grade)
+[![Actions Status](https://github.com/taktakpeops/jest-environment-browserstack/workflows/Node%20CI/badge.svg)](https://github.com/taktakpeops/jest-environment-browserstack/actions) [![npm version](http://img.shields.io/npm/v/jest-environment-browserstack.svg?style=flat)](https://npmjs.org/package/jest-environment-browserstack 'View this project on npm') [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7b1839cead7743a69be711dd6c1c022c)](https://www.codacy.com/manual/baudin.jean/jest-environment-browserstack?utm_source=github.com&utm_medium=referral&utm_content=taktakpeops/jest-environment-browserstack&utm_campaign=Badge_Grade) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 Use Jest as test-runner for running your visual-tests and more using Browserstack.
 
@@ -138,7 +138,7 @@ The `test` script will run a basic e2e tests, a visual tests making a snapshot o
 ## Known limitations
 
 The screenshot API from Browserstack is not implemented yet.
-The npm package `selenium-webdriver` is still an alpha version (4.0.0-alpha5) 
+The npm package `selenium-webdriver` is still an alpha version (4.0.0-alpha5)
 
 ## Bug and more
 

@@ -1,0 +1,86 @@
+{
+  "name": "jest-environment-browserstack",
+  "version": "2.0.0",
+  "description": "an environment for using Browserstack with Jest",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "homepage": "https://github.com/taktakpeops/jest-environment-browserstack#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taktakpeops/jest-environment-browserstack.git"
+  },
+  "engines": {
+    "node": ">= 10.15.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --ext .ts src/*",
+    "lint:fix": "eslint --ext .ts src/* --fix",
+    "prettier": "prettier --write \"**/*.{md,ts}\"",
+    "test": "yarn build && jest --runInBand --ci"
+  },
+  "keywords": [
+    "jest",
+    "browserstack",
+    "e2e",
+    "visual-testing",
+    "test",
+    "integration-test"
+  ],
+  "author": "taktakpeops",
+  "license": "MIT",
+  "dependencies": {
+    "@jest/types": "~24.9.0",
+    "@jest-environment-browserstack/plugins": "file:../plugins",
+    "browserstack-local": "~1.4.2",
+    "jest-environment-node": "~24.9.0"
+  },
+  "peerDependencies": {
+    "@types/selenium-webdriver": "~4.0.3",
+    "selenium-webdriver": "~4.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "@jest-environment-browserstack/selenium-webdriver": "file:../selenium-webdriver",
+    "@types/jest": "~24.0.18",
+    "@types/node": "~12.7.7",
+    "@types/selenium-webdriver": "~4.0.3",
+    "@typescript-eslint/eslint-plugin": "~2.14.0",
+    "@typescript-eslint/parser": "~2.14.0",
+    "eslint": "~6.8.0",
+    "eslint-config-prettier": "~6.9.0",
+    "eslint-plugin-prettier": "~3.1.1",
+    "jest": "~24.9.0",
+    "prettier": "~1.19.1",
+    "selenium-webdriver": "~4.0.0-alpha.5",
+    "ts-jest": "~24.2.0",
+    "typescript": "~3.7.4"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "testEnvironment": "./lib/index.js",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "globals": {
+      "browserstack": {
+        "driver": "@jest-environment-browserstack/selenium-webdriver",
+        "capabilities": {
+          "browserName": "chrome",
+          "browserVersion": "76.0",
+          "bstack:options": {
+            "os": "Windows",
+            "osVersion": "10",
+            "buildName": "jest-environment-browserstack",
+            "sessionName": "master"
+          }
+        }
+      }
+    }
+  }
+}

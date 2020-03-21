@@ -1,8 +1,13 @@
 {
-  "name": "jest-environment-browserstack",
-  "version": "2.0.0",
+  "name": "@jest-environment-browserstack/plugins",
+  "version": "1.0.0",
   "description": "an environment for using Browserstack with Jest",
-  "private": true,
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
   "homepage": "https://github.com/taktakpeops/jest-environment-browserstack#readme",
   "repository": {
     "type": "git",
@@ -11,16 +16,12 @@
   "engines": {
     "node": ">= 10.15.0"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "build": "lerna run build",
-    "lint": "yarn workspaces run lint",
+    "build": "tsc",
+    "lint": "eslint --ext .ts src/*",
     "lint:fix": "eslint --ext .ts src/* --fix",
     "prettier": "prettier --write \"**/*.{md,ts}\"",
-    "test": "yarn workspaces run test"
+    "test": "yarn build && yarn lint"
   },
   "keywords": [
     "jest",
@@ -32,20 +33,16 @@
   ],
   "author": "taktakpeops",
   "license": "MIT",
+  "dependencies": {
+    "@jest/types": "~24.9.0"
+  },
   "devDependencies": {
-    "@types/jest": "~24.0.18",
     "@types/node": "~12.7.7",
     "@typescript-eslint/eslint-plugin": "~2.14.0",
     "@typescript-eslint/parser": "~2.14.0",
     "eslint": "~6.8.0",
     "eslint-config-prettier": "~6.9.0",
     "eslint-plugin-prettier": "~3.1.1",
-    "jest": "~24.9.0",
-    "prettier": "~1.19.1",
-    "ts-jest": "~24.2.0",
-    "typescript": "~3.7.4"
-  },
-  "dependencies": {
-    "lerna": "~3.20.2"
+    "prettier": "~1.19.1"
   }
 }
