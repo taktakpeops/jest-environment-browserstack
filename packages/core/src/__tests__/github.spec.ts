@@ -11,6 +11,18 @@ describe('Github', () => {
     await driver.get('https://github.com/taktakpeops/jest-environment-browserstack');
   }, 20000);
 
+  it('has loaded', async () => {
+    await driver.wait(() => {
+      const elem = driver.findElement(By.css('.octicon'));
+
+      return elem.isDisplayed();
+    }, 2000);
+
+    expect(await driver.getTitle()).toBe(
+      'GitHub - taktakpeops/jest-environment-browserstack: A Jest environment for using Browserstack and Browserstack-Local with Webdriver-manager',
+    );
+  });
+
   it('has an author', async () => {
     const authorSpan = await driver.findElement(By.css('.author > a'));
     const author = await authorSpan.getText();

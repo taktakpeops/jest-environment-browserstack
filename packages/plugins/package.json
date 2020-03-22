@@ -8,7 +8,7 @@
     "lib",
     "src"
   ],
-  "homepage": "https://github.com/taktakpeops/jest-environment-browserstack#readme",
+  "homepage": "https://github.com/taktakpeops/jest-environment-browserstack/tree/master/packages/plugins#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/taktakpeops/jest-environment-browserstack.git"

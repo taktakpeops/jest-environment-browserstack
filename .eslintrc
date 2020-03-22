@@ -28,7 +28,7 @@
     "@typescript-eslint/await-thenable": 1,
     "complexity": ["error", 3],
     "max-depth": ["error", 3],
-    "max-nested-callbacks": ["error", 2],
+    "max-nested-callbacks": ["error", 3],
     "max-statements": ["error", 5]
   }
 }

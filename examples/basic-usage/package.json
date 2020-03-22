@@ -26,9 +26,9 @@
   },
   "jest": {
     "roots": [
-      "<rootDir>/src"
+      "<rootDir>"
     ],
-    "testEnvironment": "./lib/index.js",
+    "testEnvironment": "jest-environment-browserstack",
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },

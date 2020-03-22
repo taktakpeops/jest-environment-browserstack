@@ -1,6 +1,6 @@
-# Usage with Browserstack local
+# Basic Usage
 
-In this folder, you can find an example showing how to configure Jest and use the environment with Browserstack local.
+In this folder, you can find a basic example showing how to configure Jest and use the environment.
 
 ## Usage
 
@@ -18,9 +18,8 @@ cd ../core
 yarn link @jest-environment-browserstack/plugins
 yarn link @jest-environment-browserstack/selenium-webdriver
 yarn link
-cd ../../examples/with-bs-local
+cd ../../examples/basic-usage
 yarn install
-yarn start&
 yarn test
 ```
 
