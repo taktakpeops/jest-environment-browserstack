@@ -7,9 +7,10 @@ Use Jest as test-runner for running your visual-tests and more using Browserstac
 ## What is it
 
 This mono-repository has currently 3 packages:
-  - [core](https://github.com/taktakpeops/jest-environment-browserstack/tree/master/packages/core): the Jest environment taking care of making Browserstack available in your specs files
-  - [plugins](https://github.com/taktakpeops/jest-environment-browserstack/tree/master/packages/plugins): contains types and abstract classes for creating a new plugin
-  - [selenium-webdriver](https://github.com/taktakpeops/jest-environment-browserstack/tree/master/packages/selenium-webdriver): plugin wrapping [`selenium-webdriver`](https://www.npmjs.com/package/selenium-webdriver)
+
+- [core](https://github.com/taktakpeops/jest-environment-browserstack/tree/master/packages/core): the Jest environment taking care of making Browserstack available in your specs files
+- [plugins](https://github.com/taktakpeops/jest-environment-browserstack/tree/master/packages/plugins): contains types and abstract classes for creating a new plugin
+- [selenium-webdriver](https://github.com/taktakpeops/jest-environment-browserstack/tree/master/packages/selenium-webdriver): plugin wrapping [`selenium-webdriver`](https://www.npmjs.com/package/selenium-webdriver)
 
 ### Why a plugin system
 
@@ -135,8 +136,9 @@ If you aren't willing to put your credentials in your `package.json` file, you c
 ## Examples
 
 Two examples are available:
-  - [basic usage](https://github.com/taktakpeops/jest-environment-browserstack/tree/master/examples/basic-usage): a test loading the GitHub page of this repository and making some assertions
-  - [with Browserstack local](https://github.com/taktakpeops/jest-environment-browserstack/tree/master/examples/with-bs-local): an example made with create-react-app including visual test and ui-test
+
+- [basic usage](https://github.com/taktakpeops/jest-environment-browserstack/tree/master/examples/basic-usage): a test loading the GitHub page of this repository and making some assertions
+- [with Browserstack local](https://github.com/taktakpeops/jest-environment-browserstack/tree/master/examples/with-bs-local): an example made with create-react-app including visual test and ui-test
 
 ## Known limitations
 
