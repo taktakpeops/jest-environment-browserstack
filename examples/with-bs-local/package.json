@@ -1,5 +1,5 @@
 {
-  "name": "with-bt-local",
+  "name": "with-bs-local",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -85,7 +85,7 @@
           "bstack:options": {
             "os": "Windows",
             "osVersion": "10",
-            "buildName": "with-bt-local",
+            "buildName": "with-bs-local",
             "local": true
           }
         },

@@ -1,3 +1,10 @@
 {
-  "extends": "../../.eslintrc"
+  "extends": "../../.eslintrc",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "complexity": ["error", 8],
+    "max-statements": ["error", 23]
+  }
 }
