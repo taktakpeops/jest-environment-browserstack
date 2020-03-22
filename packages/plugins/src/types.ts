@@ -51,3 +51,7 @@ export type BrowserCapability = {
   'se:ieOptions'?: InternetExplorerOptions;
   'bstack:options'?: BrowserstackW3COptions;
 };
+
+export type DriverInstance = {
+  quit: Function;
+};

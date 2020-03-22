@@ -1,4 +1,4 @@
-import { BrowserCapability } from './types';
+import { BrowserCapability, DriverInstance } from './types';
 
 /**
  * log levels for the the logger
@@ -13,7 +13,7 @@ export enum LogTypes {
 /**
  * Abstract class to implement for wrapping an implementation of a Selenium web-driver
  */
-export abstract class Driver<T extends { quit: Function } = { quit: Function }, C extends BrowserCapability = BrowserCapability> {
+export abstract class Driver<T extends DriverInstance = { quit: Function }, C extends BrowserCapability = BrowserCapability> {
   constructor(private name: string, protected capabilities: C) {}
 
   private getDateForLog(): string {

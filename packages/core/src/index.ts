@@ -1,6 +1,6 @@
 import NodeEnvironment from 'jest-environment-node';
 import { Config } from '@jest/types';
-import { Driver, PluginDriver, BrowserCapability } from '@jest-environment-browserstack/plugins';
+import { Driver, DriverInstance, PluginDriver, BrowserCapability } from '@jest-environment-browserstack/plugins';
 import { Options, Local } from 'browserstack-local';
 import { randomBytes } from 'crypto';
 import { Script } from 'vm';
@@ -128,15 +128,13 @@ export default class BrowserstackEnvironment<T extends Driver> extends NodeEnvir
     this.plugin = new clazz();
     const driver = await this.plugin.createWdDriver(this.btCapabilities.capabilities, this.selHubUrl);
 
-    this.global.__driver__ = (async (caps?: BrowserCapability): Promise<any> => {
+    this.global.__driver__ = (async <D extends DriverInstance = { quit: Function }>(caps?: BrowserCapability): Promise<D> => {
       if (caps) {
         caps['bstack:options'].accessKey = this.key;
         caps['bstack:options'].userName = this.btCapabilities.capabilities['bstack:options'].userName;
-
-        return await driver.build(caps);
       }
 
-      return await driver.build(this.btCapabilities.capabilities);
+      return (await driver.build(caps || this.btCapabilities.capabilities)) as D;
     }).bind(this);
 
     this.drivers.push(this.global.__driver__);
