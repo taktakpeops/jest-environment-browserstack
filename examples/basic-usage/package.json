@@ -1,0 +1,51 @@
+{
+  "name": "basic-usage",
+  "version": "0.1.0",
+  "description": "Demo for basic usage",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "taktakpeops",
+  "license": "MIT",
+  "devDependencies": {
+    "@jest-environment-browserstack/selenium-webdriver": "file:../../packages/selenium-webdriver",
+    "@types/jest": "~24.0.18",
+    "@types/node": "~12.7.7",
+    "@types/selenium-webdriver": "~4.0.3",
+    "@typescript-eslint/eslint-plugin": "~2.14.0",
+    "@typescript-eslint/parser": "~2.14.0",
+    "eslint": "~6.8.0",
+    "eslint-config-prettier": "~6.9.0",
+    "eslint-plugin-prettier": "~3.1.1",
+    "jest": "~24.9.0",
+    "jest-environment-browserstack": "file:../../packages/core",
+    "prettier": "~1.19.1",
+    "ts-jest": "~24.2.0",
+    "typescript": "~3.7.4"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>"
+    ],
+    "testEnvironment": "jest-environment-browserstack",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "globals": {
+      "browserstack": {
+        "driver": "@jest-environment-browserstack/selenium-webdriver",
+        "capabilities": {
+          "browserName": "chrome",
+          "browserVersion": "76.0",
+          "bstack:options": {
+            "os": "Windows",
+            "osVersion": "10",
+            "buildName": "jest-environment-browserstack",
+            "sessionName": "master"
+          }
+        }
+      }
+    }
+  }
+}

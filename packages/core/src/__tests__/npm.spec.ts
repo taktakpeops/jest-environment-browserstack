@@ -10,11 +10,12 @@ describe('NPM', () => {
     await driver.get('https://www.npmjs.com/package/jest-environment-browserstack');
   }, 20000);
 
-  afterAll(async () => {
-    await driver.quit();
-  });
-
   it('get title from NPM', async () => {
+    await driver.wait(() => {
+      const app = driver.findElement(By.css('#app'));
+
+      return app.isDisplayed();
+    }, 2000);
     const title = await driver.getTitle();
     expect(title).toBe('jest-environment-browserstack - npm');
   });

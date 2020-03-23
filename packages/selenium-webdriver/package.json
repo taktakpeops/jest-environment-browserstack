@@ -1,0 +1,61 @@
+{
+  "name": "@jest-environment-browserstack/selenium-webdriver",
+  "version": "1.0.0",
+  "description": "an environment for using Browserstack with Jest",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "homepage": "https://github.com/taktakpeops/jest-environment-browserstack/tree/master/packages/selenium-webdriver#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taktakpeops/jest-environment-browserstack.git"
+  },
+  "engines": {
+    "node": ">= 10.15.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --ext .ts src/*",
+    "lint:fix": "eslint --ext .ts src/* --fix",
+    "prettier": "prettier --write \"**/*.{md,ts}\"",
+    "test": "yarn build && yarn lint"
+  },
+  "keywords": [
+    "jest",
+    "browserstack",
+    "e2e",
+    "visual-testing",
+    "test",
+    "integration-test"
+  ],
+  "author": "taktakpeops",
+  "license": "MIT",
+  "dependencies": {
+    "@jest/types": "~24.9.0",
+    "@jest-environment-browserstack/plugins": "file:../plugins",
+    "@types/selenium-webdriver": "~4.0.7",
+    "selenium-webdriver": "~4.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "@types/node": "~12.7.7",
+    "jest": "~24.9.0",
+    "ts-jest": "~24.2.0",
+    "@typescript-eslint/eslint-plugin": "~2.24.0",
+    "@typescript-eslint/parser": "~2.24.0",
+    "eslint": "~6.8.0",
+    "eslint-config-prettier": "~6.9.0",
+    "eslint-plugin-prettier": "~3.1.1",
+    "prettier": "~1.19.1"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
+  }
+}

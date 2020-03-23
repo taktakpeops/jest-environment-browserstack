@@ -1,6 +1,6 @@
 import { WebDriver, By } from 'selenium-webdriver';
 
-describe('Switch specs', () => {
+describe('should override the default configuration', () => {
   let driver: WebDriver;
 
   beforeAll(async () => {
@@ -8,13 +8,13 @@ describe('Switch specs', () => {
     // @ts-ignore
     driver = await global.__driver__({
       'bstack:options': {
-        osVersion: '11',
-        deviceName: 'iPhone 8 Plus',
-        realMobile: 'true',
+        os: 'Windows',
+        osVersion: '10',
         buildName: 'jest-environment-browserstack',
         sessionName: 'override capabilities',
       },
-      browserName: 'iPhone',
+      browserName: 'Firefox',
+      browserVersion: '75.0 beta',
     });
     await driver.get('https://github.com/taktakpeops/jest-environment-browserstack');
   }, 20000);
@@ -23,14 +23,27 @@ describe('Switch specs', () => {
     await driver.quit();
   });
 
+  it('has loaded', async () => {
+    await driver.wait(() => {
+      const elem = driver.findElement(By.css('.octicon'));
+
+      return elem.isDisplayed();
+    }, 2000);
+
+    expect(await driver.getTitle()).toBe(
+      'GitHub - taktakpeops/jest-environment-browserstack: A Jest environment for using Browserstack and Browserstack-Local with Webdriver-manager',
+    );
+  });
+
   it('has an author', async () => {
-    const authorSpan = await driver.findElement(By.css('.Details .Header-link:first-of-type'));
+    const authorSpan = await driver.findElement(By.css('.author > a'));
     const author = await authorSpan.getText();
+
     expect(author).toBe('taktakpeops');
   });
 
   it('has a repository name', async () => {
-    const repoSpan = await driver.findElement(By.css('.Details .Header-link:last-of-type'));
+    const repoSpan = await driver.findElement(By.css('.pagehead > * strong[itemprop=name] > a'));
     const repo = await repoSpan.getText();
     expect(repo).toBe('jest-environment-browserstack');
   });

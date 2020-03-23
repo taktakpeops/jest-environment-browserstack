@@ -1,5 +1,5 @@
 {
-  "name": "with-bt-local",
+  "name": "with-bs-local",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -31,7 +31,7 @@
     "identity-obj-proxy": "3.0.0",
     "is-wsl": "^1.1.0",
     "jest": "24.9.0",
-    "jest-environment-browserstack": "file:../..",
+    "jest-environment-browserstack": "file:../../packages/core",
     "jest-environment-jsdom-fourteen": "0.1.0",
     "jest-image-snapshot": "^2.11.0",
     "jest-resolve": "24.9.0",
@@ -78,13 +78,14 @@
   "jest": {
     "globals": {
       "browserstack": {
+        "driver": "@jest-environment-browserstack/selenium-webdriver",
         "capabilities": {
           "browserName": "chrome",
           "browserVersion": "76.0",
           "bstack:options": {
             "os": "Windows",
             "osVersion": "10",
-            "buildName": "with-bt-local",
+            "buildName": "with-bs-local",
             "local": true
           }
         },

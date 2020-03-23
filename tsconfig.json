@@ -8,6 +8,5 @@
     "noImplicitAny": true,
     "outDir": "./lib"
   },
-  "include": ["src/*.ts"],
   "exclude": ["node_modules/", "*.spec.ts"]
 }
