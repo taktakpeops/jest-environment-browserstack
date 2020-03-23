@@ -1459,15 +1459,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.30.tgz#3501e6f09b954de9c404671cefdbcc5d9d7c45f6"
   integrity sha512-sz9MF/zk6qVr3pAnM0BSQvYIBK44tS75QC5N+VbWSE4DjCV/pJ+UzCW/F+vVnl7TkOPcuwQureKNtSSwjBTaMg==
 
-"@types/selenium-webdriver@~4.0.3":
-  version "4.0.6"
-  resolved "https://registry.npmjs.org/@types/selenium-webdriver/-/selenium-webdriver-4.0.6.tgz#c5d595de4b0b348020c370c8d335660d290dc877"
-  integrity sha512-We3Ogdn6/EMiVUWyqHBfvLHogkgxhBWrmgayxCj5UqX5D6uVZ+JKr5qOqjGig+aHXVxDTnyisVF+t1vVINKD+w==
-
-"@types/selenium-webdriver@~4.0.7":
-  version "4.0.7"
-  resolved "https://registry.npmjs.org/@types/selenium-webdriver/-/selenium-webdriver-4.0.7.tgz#ae235f7981ce3eaa7b599bbf11f3ae4ef64cf9ff"
-  integrity sha512-IlHGwyTzzuphPZBTalJ0LmpS1wguHYODpJuo01xvbtPQy+o7DpCNZARQY7YyvbHC0EzcleoKFE8EX/BHIGa9Fg==
+"@types/selenium-webdriver@~4.0.3", "@types/selenium-webdriver@~4.0.7":
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-4.0.9.tgz#12621e55b2ef8f6c98bd17fe23fa720c6cba16bd"
+  integrity sha512-HopIwBE7GUXsscmt/J0DhnFXLSmO04AfxT6b8HAprknwka7pqEWquWDMXxCjd+NUHK9MkCe1SDKKsMiNmCItbQ==
 
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
