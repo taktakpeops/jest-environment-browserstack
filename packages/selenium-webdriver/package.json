@@ -34,7 +34,7 @@
   "author": "taktakpeops",
   "license": "MIT",
   "dependencies": {
-    "@jest/types": "~24.9.0",
+    "@jest/types": "~25.1.0",
     "@jest-environment-browserstack/plugins": "file:../plugins",
     "@types/selenium-webdriver": "~4.0.7",
     "selenium-webdriver": "~4.0.0-alpha.5"
