@@ -24,8 +24,8 @@ describe('should override the default configuration', () => {
   });
 
   it('has loaded', async () => {
-    await driver.wait(() => {
-      const elem = driver.findElement(By.css('.octicon'));
+    await driver.wait(async () => {
+      const elem = await driver.findElement(By.css('.octicon'));
 
       return elem.isDisplayed();
     }, 2000);

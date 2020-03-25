@@ -11,8 +11,8 @@ describe('NPM', () => {
   }, 20000);
 
   it('get title from NPM', async () => {
-    await driver.wait(() => {
-      const app = driver.findElement(By.css('#app'));
+    await driver.wait(async () => {
+      const app = await driver.findElement(By.css('#app'));
 
       return app.isDisplayed();
     }, 2000);
