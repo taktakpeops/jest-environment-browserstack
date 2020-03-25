@@ -33,7 +33,14 @@ jobs:
         BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       run: |
         yarn build
-        yarn install --force
+        cd packages/plugins
+        yarn link
+        cd ../selenium-webdriver
+        yarn link @jest-environment-browserstack/plugins
+        yarn link
+        cd ../core
+        yarn link @jest-environment-browserstack/plugins
+        yarn link @jest-environment-browserstack/selenium-webdriver
         yarn test
 
   build:
