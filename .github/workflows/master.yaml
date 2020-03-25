@@ -83,6 +83,15 @@ jobs:
       run: |
         yarn
         yarn build
+        cd packages/plugins
+        yarn link
+        cd ../selenium-webdriver
+        yarn link @jest-environment-browserstack/plugins
+        yarn link
+        cd ../core
+        yarn link @jest-environment-browserstack/plugins
+        yarn link @jest-environment-browserstack/selenium-webdriver
+        yarn link
     - name: run example with Browserstack local
       env:
         BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
@@ -90,6 +99,8 @@ jobs:
       run: |
         cd examples/with-bt-local
         yarn
+        yarn link @jest-environment-browserstack/selenium-webdriver
+        yarn link jest-environment-browserstack
         yarn test
         cd -
     - name: run basic examples
@@ -99,6 +110,8 @@ jobs:
       run: |
         cd examples/basic-usage
         yarn
+        yarn link @jest-environment-browserstack/selenium-webdriver
+        yarn link jest-environment-browserstack
         yarn test
 
   publish:

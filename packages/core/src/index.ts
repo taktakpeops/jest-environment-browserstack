@@ -54,9 +54,7 @@ export default class BrowserstackEnvironment<T extends Driver> extends NodeEnvir
     super(config);
 
     // get the configurations from the config in the main package.json
-    const { browserstack } = config.globals;
-
-    this.btCapabilities = browserstack;
+    this.btCapabilities = config.globals.browserstack as EnvironmentOptions;
 
     const {
       capabilities: { 'bstack:options': opts },
@@ -117,7 +115,7 @@ export default class BrowserstackEnvironment<T extends Driver> extends NodeEnvir
     const mod = await import(this.pluginDriver);
 
     // look for the exported member having a createWdDriver method
-    const clazz = Object.values(mod).find(fct => Reflect.has((fct as Function).prototype, 'createWdDriver')) as PluginDriver<T>;
+    const clazz = Object.values(mod).find((fct) => Reflect.has((fct as Function).prototype, 'createWdDriver')) as PluginDriver<T>;
 
     if (!clazz) {
       throw new Error('the plugin is not extending @jest-browserstack-environment/plugin');
@@ -147,7 +145,7 @@ export default class BrowserstackEnvironment<T extends Driver> extends NodeEnvir
     await super.teardown();
 
     await Promise.all(
-      this.drivers.map(async driver => {
+      this.drivers.map(async (driver) => {
         try {
           await driver.quit();
         } catch (_) {
