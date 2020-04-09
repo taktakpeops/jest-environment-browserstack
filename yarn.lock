@@ -301,13 +301,13 @@
 "@jest-environment-browserstack/plugins@file:packages/plugins":
   version "1.0.0"
   dependencies:
-    "@jest/types" "~25.2.0"
+    "@jest/types" "~25.3.0"
 
 "@jest-environment-browserstack/selenium-webdriver@file:packages/selenium-webdriver":
   version "1.0.0"
   dependencies:
-    "@jest-environment-browserstack/plugins" "file:../../../Library/Caches/Yarn/v6/npm-@jest-environment-browserstack-selenium-webdriver-1.0.0-dec06fb3-a6c8-4652-b64c-b82b09ee6e43-1585172545568/node_modules/@jest-environment-browserstack/plugins"
-    "@jest/types" "~25.2.0"
+    "@jest-environment-browserstack/plugins" "file:packages/plugins"
+    "@jest/types" "~25.3.0"
     "@types/selenium-webdriver" "~4.0.9"
     selenium-webdriver "~4.0.0-alpha.7"
 
@@ -458,20 +458,10 @@
     source-map "^0.6.1"
     write-file-atomic "^3.0.0"
 
-"@jest/types@^25.1.0":
-  version "25.1.0"
-  resolved "https://registry.npmjs.org/@jest/types/-/types-25.1.0.tgz#b26831916f0d7c381e11dbb5e103a72aed1b4395"
-  integrity sha512-VpOtt7tCrgvamWZh1reVsGADujKigBUFTi19mlRjqEGsE8qH4r3s+skY33dNdXOwyZIvuftZ5tqdF1IgsMejMA==
-  dependencies:
-    "@types/istanbul-lib-coverage" "^2.0.0"
-    "@types/istanbul-reports" "^1.1.1"
-    "@types/yargs" "^15.0.0"
-    chalk "^3.0.0"
-
-"@jest/types@^25.2.0", "@jest/types@~25.2.0":
-  version "25.2.0"
-  resolved "https://registry.npmjs.org/@jest/types/-/types-25.2.0.tgz#0659866d9b31843a737b601b950a690e576a415a"
-  integrity sha512-RLWBAON8LEjzD60Cn0XFmvMNTuV+scKlufIUApnG7VF7oA2jCEk5J0uzEchx6xuOwhrHohQM28K4CmEjgtDEwg==
+"@jest/types@^25.1.0", "@jest/types@^25.2.0", "@jest/types@~25.3.0":
+  version "25.3.0"
+  resolved "https://registry.yarnpkg.com/@jest/types/-/types-25.3.0.tgz#88f94b277a1d028fd7117bc1f74451e0fc2131e7"
+  integrity sha512-UkaDNewdqXAmCDbN2GlUM6amDKS78eCqiw/UmF5nE0mmLTd6moJkiZJML/X52Ke3LH7Swhw883IRXq8o9nWjVw==
   dependencies:
     "@types/istanbul-lib-coverage" "^2.0.0"
     "@types/istanbul-reports" "^1.1.1"
@@ -4944,7 +4934,7 @@ minimist-options@^3.0.1:
 
 "minimist@>=0.2.1 <1.0.0 || >=1.2.5", minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0, minimist@^1.2.5, minimist@~0.0.1:
   version "1.2.5"
-  resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
 minipass@^2.3.5, minipass@^2.6.0, minipass@^2.8.6, minipass@^2.9.0:
