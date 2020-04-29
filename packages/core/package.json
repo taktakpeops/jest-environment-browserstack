@@ -34,7 +34,7 @@
   "author": "taktakpeops",
   "license": "MIT",
   "dependencies": {
-    "@jest/types": "~25.2.0",
+    "@jest/types": "~25.5.0",
     "@jest-environment-browserstack/plugins": "file:../plugins",
     "browserstack-local": "~1.4.5",
     "jest-environment-node": "~25.2.0"
