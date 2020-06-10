@@ -1,5 +1,7 @@
 # jest-environment-browserstack
 
+![master](https://github.com/taktakpeops/jest-environment-browserstack/workflows/master/badge.svg) [![npm version](http://img.shields.io/npm/v/jest-environment-browserstack.svg?style=flat)](https://npmjs.org/package/jest-environment-browserstack 'View this project on npm')
+
 This is the core of the environment. It extends the `jest-environment-node` and implements the logic for starting the Browserstack tunnel. To interact with Browserstack, this module must be installed with a driver.
 
 An example can be found [here](../selenium-webdriver).

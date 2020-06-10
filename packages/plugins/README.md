@@ -1,5 +1,7 @@
 # @jest-environment-browserstack/plugins
 
+![master](https://github.com/taktakpeops/jest-environment-browserstack/workflows/master/badge.svg) [![npm version](http://img.shields.io/npm/v/@jest-environment-browserstack/plugins.svg?style=flat)](https://npmjs.org/package/@jest-environment-browserstack/plugins 'View this project on npm')
+
 Provides the abstract classes needed for implementing a plugin.
 
 A plugin is a wrapper on top of the W3C WebDriver API used in `jest-environment-browserstack` for interacting with Browserstack.

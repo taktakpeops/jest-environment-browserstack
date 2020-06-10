@@ -9,20 +9,20 @@
   "author": "taktakpeops",
   "license": "MIT",
   "devDependencies": {
-    "@jest-environment-browserstack/selenium-webdriver": "file:../../packages/selenium-webdriver",
-    "@types/jest": "~24.0.18",
+    "@jest-environment-browserstack/selenium-webdriver": "2.0.1",
+    "@types/jest": "~26.0.0",
     "@types/node": "~12.7.7",
-    "@types/selenium-webdriver": "~4.0.3",
-    "@typescript-eslint/eslint-plugin": "~2.14.0",
-    "@typescript-eslint/parser": "~2.14.0",
-    "eslint": "~6.8.0",
-    "eslint-config-prettier": "~6.9.0",
-    "eslint-plugin-prettier": "~3.1.1",
-    "jest": "~24.9.0",
-    "jest-environment-browserstack": "file:../../packages/core",
-    "prettier": "~1.19.1",
-    "ts-jest": "~24.2.0",
-    "typescript": "~3.7.4"
+    "@types/selenium-webdriver": "~4.0.9",
+    "@typescript-eslint/eslint-plugin": "~3.2.0",
+    "@typescript-eslint/parser": "~3.2.0",
+    "eslint": "~7.2.0",
+    "eslint-config-prettier": "~6.11.0",
+    "eslint-plugin-prettier": "~3.1.3",
+    "jest": "~26.0.1",
+    "jest-environment-browserstack": "2.0.1",
+    "prettier": "~2.0.5",
+    "ts-jest": "~26.1.0",
+    "typescript": "~3.9.5"
   },
   "jest": {
     "roots": [

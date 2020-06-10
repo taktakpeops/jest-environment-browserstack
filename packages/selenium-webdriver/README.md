@@ -1,5 +1,7 @@
 # @jest-environment-browserstack/selenium-webdriver
 
+![master](https://github.com/taktakpeops/jest-environment-browserstack/workflows/master/badge.svg) [![npm version](http://img.shields.io/npm/v/@jest-environment-browserstack/selenium-webdriver.svg?style=flat)](https://npmjs.org/package/@jest-environment-browserstack/selenium-webdriver 'View this project on npm')
+
 This plugin wraps the NPM module [`selenium-webdriver`](https://www.npmjs.com/package/selenium-webdriver).
 
 It gives access to this NPM module through the Browserstack environment.
