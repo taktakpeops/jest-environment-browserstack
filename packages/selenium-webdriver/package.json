@@ -1,6 +1,6 @@
 {
   "name": "@jest-environment-browserstack/selenium-webdriver",
-  "version": "2.0.1-alpha.5",
+  "version": "2.0.1",
   "description": "an environment for using Browserstack with Jest",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -37,7 +37,7 @@
   "author": "taktakpeops",
   "license": "MIT",
   "dependencies": {
-    "@jest-environment-browserstack/plugins": "2.0.1-alpha.5",
+    "@jest-environment-browserstack/plugins": "2.0.1",
     "@jest/types": "~25.2.0",
     "@types/selenium-webdriver": "~4.0.9",
     "selenium-webdriver": "~4.0.0-alpha.7"

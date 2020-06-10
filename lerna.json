@@ -25,5 +25,5 @@
     "**/__mocks__/**",
     ".github/**"
   ],
-  "version": "2.0.1-alpha.5"
+  "version": "2.0.1"
 }
