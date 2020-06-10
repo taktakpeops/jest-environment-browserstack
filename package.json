@@ -20,7 +20,9 @@
     "lint": "yarn workspaces run lint",
     "lint:fix": "eslint --ext .ts src/* --fix",
     "prettier": "prettier --write \"**/*.{md,ts}\"",
-    "test": "yarn workspaces run test"
+    "test": "yarn workspaces run test",
+    "publish:prerelease": "lerna publish prerelease --no-git-tag-version --yes",
+    "publish:release": "lerna publish --yes"
   },
   "keywords": [
     "jest",

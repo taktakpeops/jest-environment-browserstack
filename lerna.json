@@ -1,5 +1,7 @@
 {
-  "packages": ["packages/*"],
+  "packages": [
+    "packages/*"
+  ],
   "registry": "https://registry.npmjs.org/",
   "npmClient": "yarn",
   "useWorkspaces": true,
@@ -17,6 +19,11 @@
       "message": "chore(release): %s"
     }
   },
-  "ignoreChanges": ["examples/**", "**/__tests__/**", "**/__mocks__/**", ".github/**"],
-  "version": "2.0.0"
+  "ignoreChanges": [
+    "examples/**",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    ".github/**"
+  ],
+  "version": "2.0.1-alpha.5"
 }

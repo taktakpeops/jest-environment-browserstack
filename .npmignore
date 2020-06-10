@@ -1,3 +1,5 @@
 src/
 .github/
 examples/
+coverage/
+/node_modules/
