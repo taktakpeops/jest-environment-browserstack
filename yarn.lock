@@ -298,19 +298,6 @@
   resolved "https://registry.npmjs.org/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@jest-environment-browserstack/plugins@file:packages/plugins":
-  version "1.0.0"
-  dependencies:
-    "@jest/types" "~25.2.0"
-
-"@jest-environment-browserstack/selenium-webdriver@file:packages/selenium-webdriver":
-  version "1.0.0"
-  dependencies:
-    "@jest-environment-browserstack/plugins" "file:packages/plugins"
-    "@jest/types" "~25.2.0"
-    "@types/selenium-webdriver" "~4.0.9"
-    selenium-webdriver "~4.0.0-alpha.7"
-
 "@jest/console@^25.2.0":
   version "25.2.0"
   resolved "https://registry.npmjs.org/@jest/console/-/console-25.2.0.tgz#e2c37024d97ded0448be8c846db4ce54aa4b66dd"
@@ -4713,9 +4700,9 @@ lodash.uniq@^4.5.0:
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
 lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.2.1:
-  version "4.17.15"
-  resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 lolex@^5.0.0:
   version "5.1.2"
