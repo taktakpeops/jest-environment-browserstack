@@ -35,7 +35,7 @@
   "license": "MIT",
   "dependencies": {
     "@jest-environment-browserstack/plugins": "2.0.1",
-    "@jest/types": "~25.2.0",
+    "@jest/types": "~26.1.0",
     "browserstack-local": "~1.4.5",
     "jest-environment-node": "~25.2.0"
   },
