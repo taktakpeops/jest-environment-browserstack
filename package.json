@@ -35,7 +35,7 @@
   "author": "taktakpeops",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "~25.1.4",
+    "@types/jest": "~26.0.17",
     "@types/node": "~12.12.31",
     "@typescript-eslint/eslint-plugin": "~2.25.0",
     "@typescript-eslint/parser": "~2.25.0",
