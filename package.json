@@ -35,21 +35,21 @@
   "author": "taktakpeops",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "~25.1.4",
-    "@types/node": "~12.12.31",
-    "@typescript-eslint/eslint-plugin": "~2.25.0",
-    "@typescript-eslint/parser": "~2.25.0",
-    "eslint": "~6.8.0",
-    "eslint-config-prettier": "~6.10.1",
-    "eslint-plugin-jest": "~23.8.2",
-    "eslint-plugin-prettier": "~3.1.2",
-    "jest": "~25.2.0",
-    "prettier": "~2.0.2",
-    "ts-jest": "~25.2.1",
+    "@types/jest": "~27.0.1",
+    "@types/node": "~14.17.5",
+    "@typescript-eslint/eslint-plugin": "~4.32.0",
+    "eslint": "~7.32.0",
+    "eslint-config-prettier": "~8.3.0",
+    "eslint-plugin-jest": "~24.4.0",
+    "eslint-plugin-prettier": "~3.4.1",
+    "jest": "~27.0.6",
+    "prettier": "~2.3.2",
+    "ts-jest": "~27.0.5",
     "typescript": "~3.8.3"
   },
   "dependencies": {
-    "lerna": "~3.20.2"
+    "@typescript-eslint/parser": "^4.30.0",
+    "lerna": "~4.0.0"
   },
   "resolutions": {
     "minimist": ">=0.2.1 <1.0.0 || >=1.2.5"

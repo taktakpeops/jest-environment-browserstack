@@ -37,21 +37,19 @@
   "author": "taktakpeops",
   "license": "MIT",
   "dependencies": {
-    "@jest-environment-browserstack/plugins": "2.0.1",
-    "@jest/types": "~25.2.0",
-    "@types/selenium-webdriver": "~4.0.9",
-    "selenium-webdriver": "~4.0.0-alpha.7"
+    "@jest-environment-browserstack/plugins": "file:../plugins",
+    "@jest/types": "~27.0.6",
+    "@types/selenium-webdriver": "~4.0.15",
+    "selenium-webdriver": "~4.0.0-abeta.4"
   },
   "devDependencies": {
-    "@types/node": "~12.12.31",
-    "@typescript-eslint/eslint-plugin": "~2.25.0",
-    "@typescript-eslint/parser": "~2.25.0",
-    "eslint": "~6.8.0",
-    "eslint-config-prettier": "~6.10.1",
-    "eslint-plugin-prettier": "~3.1.2",
-    "jest": "~25.2.0",
-    "prettier": "~2.0.2",
-    "ts-jest": "~25.2.1"
+    "@types/node": "~14.17.5",
+    "eslint": "~7.32.0",
+    "eslint-config-prettier": "~8.3.0",
+    "eslint-plugin-prettier": "~3.4.1",
+    "jest": "~27.0.6",
+    "prettier": "~2.3.2",
+    "ts-jest": "~27.0.5"
   },
   "jest": {
     "roots": [
