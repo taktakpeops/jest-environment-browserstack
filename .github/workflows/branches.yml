@@ -33,15 +33,14 @@ jobs:
     - name: linter
       run: |
         yarn lint
-     - name: build
-       run: |
-         yarn lint
+    - name: build
+      run: |
+        yarn build
     - name: test
       env:
         BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
         BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       run: |
-        yarn build
         yarn test
 
   build:
