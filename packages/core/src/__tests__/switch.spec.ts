@@ -43,7 +43,7 @@ describe('should override the default configuration', () => {
   });
 
   it('has a repository name', async () => {
-    const repoSpan = await driver.findElement(By.css('.pagehead > * strong[itemprop=name] > a'));
+    const repoSpan = await driver.findElement(By.css('strong[itemprop=name] > a'));
     const repo = await repoSpan.getText();
     expect(repo).toBe('jest-environment-browserstack');
   });
