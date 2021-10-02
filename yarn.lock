@@ -367,7 +367,7 @@
 "@jest-environment-browserstack/selenium-webdriver@file:packages/selenium-webdriver":
   version "2.0.1"
   dependencies:
-    "@jest-environment-browserstack/plugins" "file:../../../Library/Caches/Yarn/v6/npm-@jest-environment-browserstack-selenium-webdriver-2.0.1-9b63a06b-a01a-483a-ad34-df9b5006cd7e-1633187637082/node_modules/@jest-environment-browserstack/plugins"
+    "@jest-environment-browserstack/plugins" "file:packages/plugins"
     "@jest/types" "~27.0.6"
     "@types/selenium-webdriver" "~4.0.15"
     selenium-webdriver "~4.0.0-abeta.4"
@@ -1475,9 +1475,9 @@
     "@types/istanbul-lib-report" "*"
 
 "@types/jest@~27.0.1":
-  version "27.0.1"
-  resolved "https://registry.npmjs.org/@types/jest/-/jest-27.0.1.tgz#fafcc997da0135865311bb1215ba16dba6bdf4ca"
-  integrity sha512-HTLpVXHrY69556ozYkcq47TtQJXpcWAWfkoqz+ZGz2JnmZhzlRjprCIyFnetSy8gpDWwTTGBcRVv1J1I1vBrHw==
+  version "27.0.2"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-27.0.2.tgz#ac383c4d4aaddd29bbf2b916d8d105c304a5fcd7"
+  integrity sha512-4dRxkS/AFX0c5XW6IPMNOydLn2tEhNhJV7DnYK+0bjoJZ+QTmfucBlihX7aoEsh/ocYtkLC73UbnBXBXIxsULA==
   dependencies:
     jest-diff "^27.0.0"
     pretty-format "^27.0.0"
@@ -4754,7 +4754,7 @@ minimist-options@4.1.0:
 
 "minimist@>=0.2.1 <1.0.0 || >=1.2.5", minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.5"
-  resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
 minipass-collect@^1.0.2:
