@@ -21,7 +21,7 @@
     "lint": "eslint --ext .ts src/*",
     "lint:fix": "eslint --ext .ts src/* --fix",
     "prettier": "prettier --write \"**/*.{md,ts}\"",
-    "test": "yarn build && jest --runInBand --ci"
+    "test": "jest --runInBand --ci"
   },
   "keywords": [
     "jest",
