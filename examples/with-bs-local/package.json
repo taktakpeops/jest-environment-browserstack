@@ -64,7 +64,9 @@
     "workbox-webpack-plugin": "6.3.0"
   },
   "resolutions": {
-    "immer": "^8.0.1"
+    "immer": "^9.0.6",
+    "browserslist": "^4.16.5",
+    "ansi-regex": "^5.0.1"
   },
   "scripts": {
     "start": "PORT=8080 node scripts/start.js",
