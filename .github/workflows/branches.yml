@@ -7,42 +7,41 @@ on:
       - master
 jobs:
   test:
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: ["10.x", "12.x", "14.x", "16.x"]
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - uses: actions/cache@v1
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - uses: actions/cache@v2
       with:
-        path: ~/.yarn
-        key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-node-
+          ${{ runner.os }}-yarn-
     - name: install dependencies
       run: |
         yarn
     - name: linter
       run: |
         yarn lint
+     - name: build
+       run: |
+         yarn lint
     - name: test
       env:
         BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
         BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       run: |
         yarn build
-        cd packages/plugins
-        yarn link
-        cd ../selenium-webdriver
-        yarn link @jest-environment-browserstack/plugins
-        yarn link
-        cd ../core
-        yarn link @jest-environment-browserstack/plugins
-        yarn link @jest-environment-browserstack/selenium-webdriver
         yarn test
 
   build:
