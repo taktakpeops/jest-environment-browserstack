@@ -38,7 +38,7 @@
   "license": "MIT",
   "dependencies": {
     "@jest-environment-browserstack/plugins": "file:../plugins",
-    "@jest/types": "~27.0.6",
+    "@jest/types": "~27.2.4",
     "@types/selenium-webdriver": "~4.0.15",
     "selenium-webdriver": "~4.0.0-abeta.4"
   },

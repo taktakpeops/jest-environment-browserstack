@@ -37,7 +37,7 @@
   "author": "taktakpeops",
   "license": "MIT",
   "dependencies": {
-    "@jest/types": "~27.0.6"
+    "@jest/types": "~27.2.4"
   },
   "devDependencies": {
     "@types/node": "~14.17.5",
