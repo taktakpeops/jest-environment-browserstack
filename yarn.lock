@@ -367,7 +367,7 @@
 "@jest-environment-browserstack/selenium-webdriver@file:packages/selenium-webdriver":
   version "2.0.1"
   dependencies:
-    "@jest-environment-browserstack/plugins" "2.0.1"
+    "@jest-environment-browserstack/plugins" "file:../../../Library/Caches/Yarn/v6/npm-@jest-environment-browserstack-selenium-webdriver-2.0.1-7b8bf7d7-2e9a-44df-b94c-719188c92fa8-1633177209662/node_modules/@jest-environment-browserstack/plugins"
     "@jest/types" "~27.0.6"
     "@types/selenium-webdriver" "~4.0.15"
     selenium-webdriver "~4.0.0-abeta.4"
