@@ -3,7 +3,7 @@ import { Config } from '@jest/types';
 import { Driver, DriverInstance, PluginDriver, BrowserCapability } from '@jest-environment-browserstack/plugins';
 import { Options, Local } from 'browserstack-local';
 import { randomBytes } from 'crypto';
-import { Script } from 'vm';
+import { Context } from 'vm';
 import { EnvironmentOptions } from './types';
 
 /**
@@ -121,7 +121,6 @@ export default class BrowserstackEnvironment<T extends Driver> extends NodeEnvir
       throw new Error('the plugin is not extending @jest-browserstack-environment/plugin');
     }
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
     // @ts-ignore
     this.plugin = new clazz();
     const driver = await this.plugin.createWdDriver(this.btCapabilities.capabilities, this.selHubUrl);
@@ -135,7 +134,7 @@ export default class BrowserstackEnvironment<T extends Driver> extends NodeEnvir
       return (await driver.build(caps || this.btCapabilities.capabilities)) as D;
     }).bind(this);
 
-    this.drivers.push(this.global.__driver__);
+    this.drivers.push(<T>this.global.__driver__);
   }
 
   /**
@@ -156,9 +155,8 @@ export default class BrowserstackEnvironment<T extends Driver> extends NodeEnvir
     await this.closeBTTunnel();
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  runScript(script: Script): any {
-    return super.runScript(script);
+  getVmContext(): Context {
+    return super.getVmContext();
   }
 
   /**
@@ -175,7 +173,7 @@ export default class BrowserstackEnvironment<T extends Driver> extends NodeEnvir
     this.global.__local__ = new Local();
 
     return new Promise((resolve, reject): void => {
-      this.global.__local__.start(this.btTunnelOpts, (err?: Error) => {
+      (<Local>this.global.__local__).start(this.btTunnelOpts, (err?: Error) => {
         if (err) {
           return reject(err);
         }
@@ -195,7 +193,7 @@ export default class BrowserstackEnvironment<T extends Driver> extends NodeEnvir
     }
 
     return new Promise((resolve, reject): void => {
-      this.global.__local__.stop((err?: Error) => {
+      (<Local>this.global.__local__).stop((err?: Error) => {
         if (err) {
           return reject(err);
         }
