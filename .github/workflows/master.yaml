@@ -7,8 +7,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
+      max-parallel: 2
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [10.x, 12.x, 14.x, 16.x]
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
@@ -33,14 +34,7 @@ jobs:
         BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       run: |
         yarn build
-        cd packages/plugins
-        yarn link
-        cd ../selenium-webdriver
-        yarn link @jest-environment-browserstack/plugins
-        yarn link
-        cd ../core
-        yarn link @jest-environment-browserstack/plugins
-        yarn link @jest-environment-browserstack/selenium-webdriver
+        yarn install --force --no-lockfile
         yarn test
 
   build:
@@ -48,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [10.x, 12.x, 14.x, 16.x]
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
@@ -72,8 +66,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     strategy:
+      max-parallel: 1
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [14.x, 16.x]
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
@@ -90,35 +85,22 @@ jobs:
       run: |
         yarn
         yarn build
-        cd packages/plugins
-        yarn link
-        cd ../selenium-webdriver
-        yarn link @jest-environment-browserstack/plugins
-        yarn link
-        cd ../core
-        yarn link @jest-environment-browserstack/plugins
-        yarn link @jest-environment-browserstack/selenium-webdriver
-        yarn link
+        yarn --force --no-lockfile
     - name: run example with Browserstack local
+      working-directory: examples/with-bs-local
       env:
         BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
         BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       run: |
-        cd examples/with-bs-local
         yarn
-        yarn link @jest-environment-browserstack/selenium-webdriver
-        yarn link jest-environment-browserstack
         yarn test
-        cd -
     - name: run basic examples
+      working-directory: examples/basic-usage
       env:
         BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
         BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       run: |
-        cd examples/basic-usage
         yarn
-        yarn link @jest-environment-browserstack/selenium-webdriver
-        yarn link jest-environment-browserstack
         yarn test
 
   publish:
@@ -127,7 +109,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}

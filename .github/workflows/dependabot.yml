@@ -1,0 +1,42 @@
+name: Dependabot
+on:
+  pull_request_target
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    strategy:
+      max-parallel: 2
+      matrix:
+        node-version: ["10.x", "12.x", "14.x", "16.x"]
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - uses: actions/cache@v2
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+    - name: install dependencies
+      run: |
+        yarn
+    - name: linter
+      run: |
+        yarn lint
+    - name: build
+      run: |
+        yarn build
+        # force re-install deps with no lock update
+        yarn --force --no-lockfile
+        yarn bootstrap
