@@ -37,8 +37,8 @@ jobs:
     - name: build
       run: |
         yarn build
-        # force re-install deps
-        yarn --force
+        # force re-install deps with no lock update
+        yarn --force --no-lockfile
     - name: test
       env:
         BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
