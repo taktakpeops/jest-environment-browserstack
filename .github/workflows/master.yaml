@@ -35,6 +35,7 @@ jobs:
       run: |
         yarn build
         yarn install --force --no-lockfile
+        yarn bootstrap
         yarn test
 
   build:
