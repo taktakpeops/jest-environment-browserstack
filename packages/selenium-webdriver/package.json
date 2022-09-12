@@ -43,7 +43,7 @@
     "selenium-webdriver": "~4.0.0-abeta.4"
   },
   "devDependencies": {
-    "@types/node": "~14.17.5",
+    "@types/node": "~18.7.16",
     "eslint": "~7.32.0",
     "eslint-config-prettier": "~8.3.0",
     "eslint-plugin-prettier": "~3.4.1",
