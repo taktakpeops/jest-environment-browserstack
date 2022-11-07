@@ -40,7 +40,7 @@
     "@jest/types": "~27.0.6"
   },
   "devDependencies": {
-    "@types/node": "~14.17.5",
+    "@types/node": "~18.11.9",
     "eslint": "~7.32.0",
     "eslint-config-prettier": "~8.3.0",
     "eslint-plugin-prettier": "~3.4.1",
